@@ -5,6 +5,7 @@ defmodule Corq.Accounts.User do
   schema "users" do
     field :name, :string
     field :email, :string
+    has_many :posts, Corq.Posts.Post
 
     timestamps(type: :utc_datetime)
   end
