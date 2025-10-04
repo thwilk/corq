@@ -24,8 +24,7 @@ defmodule CorqWeb.Router do
 
   scope "/api", CorqWeb do 
     pipe_through :api
-
-
+    
     resources "/posts", PostController, except: [:new, :edit]
   end 
 
