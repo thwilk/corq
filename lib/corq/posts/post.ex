@@ -6,6 +6,7 @@ defmodule Corq.Posts.Post do
     field :body, :string
     field :title, :string
     belongs_to :user, Corq.Accounts.User
+    belongs_to :tagged_user, Corq.Accounts.User
 
     timestamps(type: :utc_datetime)
   end
@@ -13,7 +14,7 @@ defmodule Corq.Posts.Post do
   @doc false
   def changeset(post, attrs) do
     post
-    |> cast(attrs, [:body, :title, :user_id])
+    |> cast(attrs, [:body, :title, :user_id, :tagged_user_id])
     |> validate_required([:body, :title, :user_id])
   end
 end
