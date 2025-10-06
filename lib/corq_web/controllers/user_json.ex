@@ -1,6 +1,7 @@
 defmodule CorqWeb.UserJSON do
   alias Corq.Accounts.User
   alias Corq.Posts.Post
+
   @doc """
   Renders a list of users.
   """
@@ -23,7 +24,6 @@ defmodule CorqWeb.UserJSON do
       posts: for(post <- user.posts, do: post_data(post))
     }
   end
-
 
   defp post_data(%Post{} = post) do
     %{

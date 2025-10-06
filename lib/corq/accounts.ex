@@ -20,7 +20,6 @@ defmodule Corq.Accounts do
   def list_users do
     Repo.all(User)
     |> Repo.preload(:posts)
-
   end
 
   @doc """

@@ -18,15 +18,15 @@ defmodule CorqWeb.Router do
     pipe_through :browser
 
     get "/", PageController, :home
-
   end
 
-  scope "/api", CorqWeb do 
+  scope "/api", CorqWeb do
     pipe_through :api
 
     resources "/posts", PostController, except: [:new, :edit]
     resources "/users", UserController, except: [:new, :edit]
-  end 
+    resources "/comments", CommentController, except: [:new, :edit]
+  end
 
   # Other scopes may use custom stacks.
   # scope "/api", CorqWeb do
